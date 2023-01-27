@@ -133,6 +133,9 @@
   <ItemGroup>
     <ClCompile Include="ncurses-grapher.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ncurses-grapher.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
