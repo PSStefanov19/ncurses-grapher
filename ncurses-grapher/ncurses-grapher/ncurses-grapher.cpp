@@ -18,7 +18,9 @@ void mapEquation(const std::pair<int, int>& screenMiddle)
     {
         int intersectionCounter = 0;
 
-        const int equationResult = -3*x*x + 12*x - 9;
+
+        // Note: Since sin() and cos() functions return numbers close to 0 it is best to multiply the result by some arbitrary value
+        const int equationResult = 5*sin(x);
 
         // The -0.5 transforms the graph in 2 ways:
         // 
@@ -28,17 +30,11 @@ void mapEquation(const std::pair<int, int>& screenMiddle)
         // 
         // The - rotates the graph since pdcurses' (0, 0) is the top left angle
 
-        mvprintw(equationResult * -0.5 + screenMiddle.first, x + screenMiddle.second , "*");
-
-        if (equationResult == screenMiddle.first) 
-        {
-            mvprintw(intersectionCounter + 2, 1, "Intersection at: (%d, %d)", x, equationResult);
-            intersectionCounter++;
-        }
+        mvprintw(equationResult * -0.5 + screenMiddle.first, x + screenMiddle.second, "*");
 
     }
 
-    mvprintw(1, 1, "x^2");
+    mvprintw(1, 1, "Equation: sin(x)");
 }
 
 int main()
